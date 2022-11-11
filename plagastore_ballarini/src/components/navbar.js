@@ -1,32 +1,48 @@
 import React from 'react';
 import CartWidget from './CartWidget';
+import Logo from '../assets/logoblanco.jpeg'
 
 function Plaganavbar() {
     return (
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="#">Logo</a>
-            <ul class="navbar-nav">
+        <div className='plaganav'>
+            <nav className="navbar navbar-expand-sm bg-light navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src={Logo} alt="Logo" className="logo container"/>
+                </a>
+                <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 2</a>
-                </li>
+                        <a class="nav-link" href="#">Lanzamientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Remeras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Buzos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shorts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Plaga Kids</a>
+                    </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Link 1</a>
-                        <a class="dropdown-item" href="#">Link 2</a>
-                        <a class="dropdown-item" href="#">Link 3</a>
-                    </div>
-                </li>
-            </ul>
-            <CartWidget/>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Accesorios
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Gorras</a>
+                            <a class="dropdown-item" href="#">Medias</a>
+                            <a class="dropdown-item" href="#">Mochilas</a>
+                            <a class="dropdown-item" href="#">Cerámicas</a>
+                            <a class="dropdown-item" href="#">Fanzines</a>
+                        </div>
+                    </li>
+                </ul>
+                <CartWidget/>
             </nav>
-        
+        </div>
+            
     );
 }
 

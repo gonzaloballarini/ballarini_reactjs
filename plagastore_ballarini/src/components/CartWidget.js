@@ -1,6 +1,6 @@
 function cartwidget () {
     return (
-        <button>
+        <button className="carrito">
             <i className="fas fa-shopping-cart"/>
         </button>
     );
