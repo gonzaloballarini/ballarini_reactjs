@@ -1,44 +1,34 @@
-function plaganavbar() {
+import React from 'react';
+import CartWidget from './CartWidget';
+
+function Plaganavbar() {
     return (
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">
-        Logo
-        </a>
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">Logo</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                </li>
 
-        <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-            Link 1
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-            Link 2
-            </a>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#"
-            id="navbardrop"
-            data-toggle="dropdown"
-            >
-            Dropdown link
-            </a>
-            <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">
-            Link 1
-            </a>
-            <a class="dropdown-item" href="#">
-            Link 2
-            </a>
-            <a class="dropdown-item" href="#">
-            Link 3
-            </a>
-            </div>
-        </li>
-        </ul>
-    </nav>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+            <CartWidget/>
+            </nav>
+        
     );
 }
 
-export default plaganavbar;
+export default Plaganavbar;
+
