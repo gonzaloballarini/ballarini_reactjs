@@ -1,4 +1,6 @@
 import buzo from '../assets/_DSC8096.jpg'
+import Counter from './ItemCount.js';
+
 function Card () {
     return (
         <div>
@@ -8,8 +10,7 @@ function Card () {
                     <div className='card-body'>
                         <h4 className='card-title'>John Doe</h4>
                         <p className='card-text'>Some example text.</p>
-                        <a href="" className='btn btn-primary'>See Profile</a>
-
+                        <Counter/>
                     </div>
                 </div>
             </article>
