@@ -1,17 +1,20 @@
 import React from 'react';
 import CartWidget from './CartWidget';
-import Logo from '../assets/logoblanco.jpeg'
+import Logo from '../assets/logoblanco.jpeg';
+import {Link} from 'react-router-dom';
 
 function Plaganavbar() {
     return (
         <div className='plaganav'>
             <nav className="navbar navbar-expand-sm bg-light navbar-light">
-                <a class="navbar-brand" href="#">
+                <Link to={'/'} class="navbar-brand">
                     <img src={Logo} alt="Logo" className="logo container"/>
-                </a>
+                </Link>
                 <ul class="navbar-nav">
                 <li class="nav-item">
-                        <a class="nav-link" href="#">Lanzamientos</a>
+                        <Link to={'/category/:category'} className="nav-link">
+                            Lanzamientos
+                        </Link>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Remeras</a>

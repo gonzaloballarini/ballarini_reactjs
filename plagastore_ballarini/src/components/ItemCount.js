@@ -15,7 +15,7 @@ function Counter () {
             <button className='counter'  disabled={count < 1} onClick={()=> setCount (count -1)}>-          
             </button>
             <button className='counter' disabled={count > stock} onClick={()=> setCount (count +1)} >+</button>
-            <button className='btn btn-primary' disabled={stock<1} >Agregar al carrito</button>
+            <button className='btn btn-primary' disabled={stock===0} >Agregar al carrito</button>
         </div>
 
     );    

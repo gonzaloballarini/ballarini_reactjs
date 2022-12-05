@@ -1,17 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import ItemListContainer from './components/ItemListContainer.js';
 import Plaganavbar from './components/Navbar.js';
-import {useState} from "react"; 
-
+import ItemDetailContainer from './components/ItemDetailContainer.js'; 
+import { Layout } from './components/Layout';
 
 function App() {
-  const [] = useState (); 
+
   return (
-    <div className="App">
-      <Plaganavbar/>
+    <Layout>
       <ItemListContainer/>
-    </div>
+      <ItemDetailContainer/>
+    </Layout>
   );
 }
 

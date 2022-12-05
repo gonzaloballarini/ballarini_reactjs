@@ -2,10 +2,11 @@
 
 function Item ({products}) {
     return (
-        <div>
-            <img src={products.img}/>
-            <li> {products.name}  </li>
-        </div>
+        <div></div>
+        // <div>
+        //     <img src={products.img}/>
+        //     <li> {products.name}  </li>
+        // </div>
     );
 }
 
