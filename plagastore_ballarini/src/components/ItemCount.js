@@ -1,25 +1,24 @@
-//Aqui hay que crear un boton y un contador con mas y menos para crecer y decrecer la cantidad de productos. 
-
-import { useState } from "react";
-
-function Counter () {
-    const [count, setCount] = useState (0);
-    
-    //Por el momento el valor del stock está definido en este componente, pero ya quedó vinculado a los botones a los fines de que el usuario nunca pueda agregar mas productos que el stock disponible. 
-    //Luego hay que vincularlo a otro componente, o bien json, o base de datos. 
-    const stock = 14; 
-
+export const ItemCount = ({ count, handleCount }) => {
     return (
-        <div>
-            <p> Cantidad : {count} </p>
-            <button className='counter'  disabled={count < 1} onClick={()=> setCount (count -1)}>-          
-            </button>
-            <button className='counter' disabled={count > stock} onClick={()=> setCount (count +1)} >+</button>
-            <button className='btn btn-primary' disabled={stock===0} >Agregar al carrito</button>
-        </div>
-
-    );    
-}
-
-
-export default Counter;
+      <div className="flex mt-10 w-4/5 bg-gray-200 rounded">
+        <button
+          onClick={() => handleCount("minus")}
+          className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
+        >
+          -
+        </button>
+        <span
+          id="counter"
+          className="flex flex-1 justify-center items-center mx-4 font-bold"
+        >
+          {count}
+        </span>
+        <button
+          onClick={() => handleCount("plus")}
+          className="flex justify-center items-center p-2 w-2/5 h-full bg-gray-800 text-white"
+        >
+          +
+        </button>
+      </div>
+    );
+  };

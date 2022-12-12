@@ -1,47 +1,47 @@
-import Card from './Card';
-import ItemList from './ItemList';
-import Productos from './Productos';
-import {useState} from 'react'; 
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
+//Own Components
+import ItemList from "./ItemList";
+import { Loading } from "./Loading";
 
-function ItemListContainer () {
+//Mock
+import StockProductos from "../mocks/StockProductos";
 
-    const [products, setProducts] = useState ([]);
-    const [hasProducts, setHasProducts] = useState (false); 
+function ItemListContainer() {
+    const { category } = useParams();
+    const [products, setProducts] = useState([]);
 
-    const productList = new Promise ((resolve) => setTimeout (() => {
-    resolve(Productos);},3000) );
+useEffect(() => {
+    new Promise((resolve) => {
+      // Reset the state to show the loading spinner
+    setProducts([]);
 
-    productList
-    .then ((data)=> setProducts(data))
-    .then ((data)=> setHasProducts(!data));
+      // Simulation of a call to an api
+    return setTimeout(() => {
+        resolve(StockProductos);
+    }, 1000);
+    }).then((data) => {
+    if (category) {
+        const categories = data.filter(
+        (product) => product.category === category
+        );
+        setProducts(categories);
+    } else {
+        setProducts(data);
+    }
+    });
+}, [category]);
 
-    console.log (products);
+if (products.length === 0) {
+    return <Loading />;
+}
 
-    return (
-        <div className='container pt-3'>
-            <div className='row'>
-                <div className='col-md-3'>
-                    <Card/>
-                </div>
-                <div className='col-md-3'>
-                    <Card/>
-                </div>
-                <div className='col-md-3'>
-                    <Card/>
-                </div>
-                <div className='col-md-3'>
-                    <Card/>
-                </div>
-            </div>
-            Aqui deberían aparecer los distintos productos de la landing page
-            <div>
-                {!hasProducts? <p>Loading...</p> : <p>Hay productos </p>}
-            </div>
-            <ItemList products={products}/>
-
-        </div>
-    );
+return (
+    <div>
+    <ItemList products={products} />
+    </div>
+);
 }
 
 export default ItemListContainer;

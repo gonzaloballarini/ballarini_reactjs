@@ -1,4 +1,4 @@
-import buzo from '../assets/_DSC8096.jpg'
+import buzo from '../assets/stayingalive.jpg'
 import Counter from './ItemCount.js';
 
 function Card () {

@@ -1,12 +1,12 @@
+import ItemDetailContainer from "../components/ItemDetailContainer";
 import { Layout } from "../components/Layout";
 
 const ItemView = () => {
-    return (
-        <Layout>
-            <h1> Item View </h1>
-        </Layout>
-        
-    )
+  return (
+    <Layout>
+      <ItemDetailContainer />
+    </Layout>
+  );
 };
 
-export default ItemView; 
+export default ItemView;
